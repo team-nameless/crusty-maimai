@@ -1,0 +1,11 @@
+[package]
+name = "crusty-maimai"
+version = "0.1.0"
+edition = "2021"
+authors = ["swyrin", "foxeiz"]
+
+[dependencies]
+reqwest = { version = "0.11.24", features = ["blocking", "json", "cookies"] }
+
+[dev-dependencies]
+dotenv = "0.15.0"
