@@ -1,4 +1,4 @@
-//! The maimai website session, with session management & content (de)serializer.
+//! The maimai website session.
 
 use std::collections::HashMap;
 use reqwest::header::HeaderMap;
