@@ -27,7 +27,7 @@ impl MaimaiSession {
     /// * `password` - SEGA ID password.
     ///
     /// # Returns
-    /// * A raw HTML of the index page.
+    /// * Raw HTML of the index site.
     ///
     /// # Warning
     /// <div class="warning">
@@ -84,7 +84,7 @@ impl MaimaiSession {
     /// * `ssid` - The session ID of the logged-in session. (value of `?ssid=` URL param)
     ///
     /// # Returns
-    /// * A raw HTML of the index page.
+    /// * Raw HTML of the index site.
     ///
     /// # Warning
     /// <div class="warning">
