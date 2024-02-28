@@ -142,6 +142,27 @@ impl MaimaiSession {
             .send()
             .expect("Unable to reach logout page.");
     }
+
+    /// Jumps to a place in maimai website.
+    /// Requires logged in.
+    ///
+    /// # Arguments
+    /// * `place` - Destination URL.
+    ///
+    /// # Returns
+    /// * Raw HTML of the target site.
+    pub fn jump_to(&self, place: impl Into<String>) -> String {
+        let response = self.request_client
+            .get(place.into())
+            .send()
+            .expect("Unable to access the site.");
+
+        if response.url().host().unwrap().to_string() == "lng-tgk-aime-gw.am-all.net" {
+            panic!("You are not logged in!")
+        }
+
+        response.text().expect("No data present.")
+    }
 }
 
 impl Default for MaimaiSession {

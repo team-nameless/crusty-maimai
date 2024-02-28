@@ -41,4 +41,17 @@ mod test_login {
         let session = MaimaiSession::default();
         session.logout();
     }
+
+    #[test]
+    fn jump_works() {
+        dotenv().ok();
+
+        let session = MaimaiSession::default();
+        let username = std::env::var("SEGA_ID_USERNAME").unwrap();
+        let password = std::env::var("SEGA_ID_PASSWORD").unwrap();
+
+        session.login_with_credentials(username, password);
+        let html = session.jump_to("https://maimaidx-eng.com/maimai-mobile/playerData/");
+        assert_ne!(html.len(), 0);
+    }
 }
