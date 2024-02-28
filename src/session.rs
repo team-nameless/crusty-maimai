@@ -111,7 +111,7 @@ impl MaimaiSession {
             panic!("You logged in with bad SSID! Maybe SEGA revoked the session.");
         }
 
-        response.text().expect("Wrong place to crawl.")
+        response.text().expect("No data present.")
     }
 
     /// Logout from the session.
@@ -128,10 +128,10 @@ impl MaimaiSession {
         let response = self.request_client
             .get(user_option_url)
             .send()
-            .expect("Unable to reach home page.");
+            .expect("Unable to reach option page.");
 
         if response.url().as_str() == "https://maimaidx-eng.com/maimai-mobile/error/" {
-            panic!("You are not logged in in order to logout!")
+            panic!("Seems like the session is not logged in. Or SEGA did something...")
         }
 
         // Now we do the actual shit.
