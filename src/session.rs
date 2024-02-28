@@ -11,12 +11,12 @@ pub struct MaimaiSession {
 
 impl MaimaiSession {
     /// Get authorization URL.
-    fn get_auth_url() -> &'static str {
+    pub(crate) fn get_auth_url() -> &'static str {
         "https://lng-tgk-aime-gw.am-all.net/common_auth/login"
     }
 
     /// Get index page URL.
-    fn get_home_url() -> &'static str {
+    pub(crate) fn get_home_url() -> &'static str {
         "https://maimaidx-eng.com/maimai-mobile"
     }
 
