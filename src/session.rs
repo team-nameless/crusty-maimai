@@ -135,11 +135,12 @@ impl MaimaiSession {
         }
 
         // Now we do the actual shit.
-        let logout_url = String::from(Self::get_home_url()) + "/home/userOption/logout/?";
+        let logout_url = String::from(Self::get_home_url()) + "/home/userOption/logout";
+
         self.request_client
             .get(logout_url)
             .send()
-            .expect("Unable to reach home page.");
+            .expect("Unable to reach logout page.");
     }
 }
 
