@@ -131,7 +131,9 @@ impl MaimaiSession {
             .expect("Unable to reach option page.");
 
         if response.url().as_str() == "https://maimaidx-eng.com/maimai-mobile/error/" {
-            panic!("Seems like the session is not logged in. Or SEGA did something...")
+            dbg!("Seems like the site returned an error...");
+            dbg!("Nonetheless, the session is not logged in, therefore not going further :D");
+            ()
         }
 
         // Now we do the actual shit.

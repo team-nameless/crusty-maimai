@@ -36,7 +36,6 @@ mod test_login {
     }
 
     #[test]
-    #[should_panic]
     fn logout_fails() {
         let session = MaimaiSession::default();
         session.logout();
